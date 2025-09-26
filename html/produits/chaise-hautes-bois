@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chaise Haute Évolutive (Bois) - Recy'Kids</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="site-header">
+    <div class="container">
+        <a href="../../index.html" class="site-logo" aria-label="Page d'accueil de Recy'Kids">
+            <img src="../../images/recykids-logo.webp" alt="Logo Recy'Kids - Ressourcerie Bébé & Enfant">
+        </a>
+        <nav class="main-nav" aria-label="Navigation principale">
+            <ul>
+                <li><a href="../nous-trouver.html">Nous trouver</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+                <li><a href="../a-propos.html">À Propos</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<main>
+    <h2>Chaise Haute Évolutive (Bois)</h2>
+    <img src="../../images/chaise-haute-bois.webp" alt="Chaise haute évolutive en bois" style="max-width:350px;">
+    <ul>
+        <li><strong>État :</strong> Excellent</li>
+        <li><strong>Matériau :</strong> Bois non traité</li>
+        <li><strong>Réglable en hauteur</strong></li>
+        <li><strong>Convient de 6 mois à 6 ans</strong></li>
+    </ul>
+    <p>Matériau durable et sain pour votre enfant. Facile à nettoyer et à intégrer dans tous types d’intérieurs.</p>
+    <p><strong>A retirer à :</strong> Aix-en-Provence</p>
+</main>
+<footer>
+    <p>&copy; 2025 Recy'Kids — Site statique sobre et éco-conçu</p>
+</footer>
+</body>
+</html>
