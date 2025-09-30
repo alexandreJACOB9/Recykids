@@ -1,8 +1,7 @@
-/* --- Variables CSS (Couleurs inspirées du logo) --- */
 :root {
-    --color-primary-green: #388E3C; /* Vert foncé du logo */
-    --color-secondary-blue: #1976D2; /* Bleu du logo */
-    --color-accent-pink: #E91E63;   /* Rose du petit personnage */
+    --color-primary-green: #388E3C;
+    --color-secondary-blue: #1976D2;
+    --color-accent-pink: #E91E63;
     --color-text-dark: #333;
     --color-text-light: #666;
     --color-background-light: #f8f8f8;
@@ -11,23 +10,24 @@
     --max-width-content: 960px;
 }
 
-/* --- Base Reset & Typographie --- */
-html {
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    font-size: 100%;
 }
 *, *:before, *:after {
     box-sizing: inherit;
 }
 
 body {
-    margin: 0;
     font-family: var(--font-family-sans);
     line-height: 1.6;
     color: var(--color-text-dark);
     background-color: var(--color-background-light);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -60,7 +60,6 @@ p {
     padding: 0 1rem;
 }
 
-/* --- Header --- */
 .site-header {
     background-color: #fff;
     border-bottom: 1px solid var(--color-border);
@@ -105,7 +104,6 @@ p {
     text-decoration: none;
 }
 
-/* --- Navigation Header Alternative (style premier CSS) --- */
 header {
     background: var(--color-primary-green);
     color: #fff;
@@ -123,21 +121,18 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* --- Contenu Principal --- */
 main {
     max-width: 900px;
-    margin: auto;
-    padding: 2em 1em;
+    width: 100%;
+    margin: 2em auto;
+    padding: 2em 2em;
     background: #fff;
+    box-shadow: 0 2px 20px #0001;
+    border-radius: 12px;
+    flex: 0 0 auto;    
+    display: block;
 }
 
-.page-content {
-    padding-top: 2rem;
-    padding-bottom: 3rem;
-    min-height: calc(100vh - 200px);
-}
-
-/* --- CATALOGUE (style du premier CSS avec couleurs modernisées) --- */
 .catalogue {
     display: flex;
     flex-wrap: wrap;
@@ -147,10 +142,10 @@ main {
 }
 
 .catalogue article {
-    background: linear-gradient(135deg, #e8f5e8, #f0f8f0); /* Dégradé vert léger */
+    background: linear-gradient(135deg, #e8f5e8, #f0f8f0);
     border: 1px solid var(--color-border);
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(56, 142, 60, 0.1); /* Ombre verte subtile */
+    box-shadow: 0 4px 12px rgba(56, 142, 60, 0.1);
     padding: 1.5em;
     max-width: 280px;
     flex: 1 1 240px;
@@ -216,42 +211,37 @@ main {
 .btn.btn-secondary {
     background: linear-gradient(135deg, var(--color-secondary-blue), #2196F3);
 }
-
 .btn.btn-secondary:hover {
     background: linear-gradient(135deg, #1565C0, var(--color-secondary-blue));
 }
-
 .btn.btn-accent {
     background: linear-gradient(135deg, var(--color-accent-pink), #F06292);
 }
-
 .btn.btn-accent:hover {
     background: linear-gradient(135deg, #C2185B, var(--color-accent-pink));
 }
 
-/* --- Footer --- */
 .site-footer, footer {
     background-color: var(--color-primary-green);
     color: #fff;
     padding: 2rem 0;
     text-align: center;
     font-size: 0.9em;
+    flex-shrink: 0;
+    margin-top: auto; 
 }
 
 .site-footer a, footer a {
     color: #fff;
     text-decoration: underline;
 }
-
 .site-footer a:hover, .site-footer a:focus, footer a:hover {
     color: var(--color-secondary-blue);
 }
-
 .site-footer p, footer p {
     margin: 0.5rem 0;
 }
 
-/* --- Responsive Design --- */
 @media (min-width: 768px) {
     .site-header .container {
         flex-direction: row;
@@ -262,23 +252,17 @@ main {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
+    main {
+        max-width: 98vw;
+        padding: 1em;
+    }
     .catalogue {
         flex-direction: column;
         align-items: center;
     }
-    
     .catalogue article {
         max-width: 100%;
         flex: none;
-    }
-    
-    main { 
-        padding: 1em; 
-    }
-    
-    .page-content {
-        padding-top: 1rem;
-        padding-bottom: 2rem;
     }
 }
