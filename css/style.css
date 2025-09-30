@@ -185,7 +185,6 @@ main {
     margin-bottom: 1em;
 }
 
-/* --- Boutons --- */
 .btn {
     display: inline-block;
     background: linear-gradient(135deg, var(--color-primary-green), #4CAF50);
