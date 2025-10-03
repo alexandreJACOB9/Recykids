@@ -1,0 +1,36 @@
+backend:
+  name: git-gateway          
+  branch: main               
+site_url: https://TON-SITE.netlify.app
+display_url: https://TON-SITE.netlify.app
+logo_url: https://TON-SITE.netlify.app/images/recykids-logo.webp
+
+media_folder: "images/uploads"   
+public_folder: "/images/uploads" 
+
+publish_mode: editorial_workflow 
+
+collections:
+  - name: "produits"
+    label: "Produits"
+    label_singular: "Produit"
+    folder: "content/produits"  
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Visuel", name: "image", widget: "image" }
+      - { label: "Résumé (liste)", name: "excerpt", widget: "text", required: false }
+      - { label: "Détails", name: "body", widget: "markdown" }
+
+  - name: "infos"
+    label: "Infos"
+    files:
+      - label: "Contact / Horaires"
+        name: "contact"
+        file: "content/infos/contact.md"
+        fields:
+          - { label: "Email", name: "email", widget: "string", default: "contact@recykids.fr" }
+          - { label: "Téléphone", name: "tel", widget: "string", default: "+33 4 00 00 00 00" }
+          - { label: "Horaires", name: "horaires", widget: "text", default: "Lundi → Vendredi : 9h–17h" }
