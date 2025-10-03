@@ -1,42 +1,237 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Contact - Recy'Kids</title>
-    <link rel="stylesheet" href="../css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Recy'Kids</title>
+  <meta name="description" content="Contactez Recy'Kids : email, téléphone, horaires et adresse de la boutique." />
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <!-- Favicons (garde le PNG en fallback, le WebP est optionnel) -->
+  <link rel="icon" type="image/png" href="../images/favicon.png" />
+  <link rel="icon" type="image/webp" href="../images/recykids-logo.webp" />
+
+  <!-- Styles légers spécifiques à la page (cohérents avec la charte) -->
+  <style>
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: -999px;
+      padding: .6rem 1rem;
+      background: #fff;
+      color: var(--color-primary-green);
+      border: 2px solid var(--color-primary-green);
+      border-radius: 6px;
+      z-index: 1000;
+    }
+    .skip-link:focus { left: 1rem; top: 1rem; }
+
+    .contact-intro { margin-top: 0; color: var(--color-text-light); }
+
+    .contact-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin: 1.25rem 0 1.75rem;
+    }
+    .contact-card {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: .75rem 1rem;
+      align-items: center;
+      padding: 1rem;
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
+      background: linear-gradient(135deg, #e8f5e8, #f5fbf5);
+      box-shadow: 0 4px 12px rgba(56,142,60,.08);
+    }
+    .contact-card img {
+      width: 56px; height: 56px; object-fit: contain; display: block;
+      filter: drop-shadow(0 1px 2px rgba(0,0,0,.08));
+    }
+    .contact-card h3 { margin: 0; color: var(--color-primary-green); font-size: 1.15rem; line-height: 1.25; }
+    .contact-card p { grid-column: 1 / -1; margin: .25rem 0 0; color: var(--color-text-light); }
+
+    .contact-form {
+      margin-top: 1.25rem;
+      padding: 1rem 1rem 1.25rem;
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: 0 4px 12px rgba(56,142,60,.06);
+    }
+    .contact-form h3 { margin-top: 0; }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: .75rem;
+      margin-bottom: .75rem;
+    }
+    .form-row--2 { grid-template-columns: 1fr 1fr; }
+    .contact-form label { font-weight: 600; }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: .6rem .7rem;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      font: inherit;
+      line-height: 1.4;
+      background: #fff;
+    }
+    .contact-form textarea { min-height: 120px; resize: vertical; }
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      align-items: center;
+      margin-top: .5rem;
+    }
+    .contact-actions .btn[disabled] { opacity: .75; cursor: not-allowed; }
+
+    .contact-extra {
+      margin-top: 1.25rem;
+      padding-top: 1rem;
+      border-top: 1px dashed var(--color-border);
+      color: var(--color-text-light);
+      font-size: .95rem;
+    }
+
+    @media (max-width: 700px) {
+      .form-row--2 { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-<header class="site-header">
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <header class="site-header">
     <div class="container">
-        <a href="../index.html" class="site-logo" aria-label="Page d'accueil de Recy'Kids">
-            <img src="../images/recykids-logo.webp" alt="Logo Recy'Kids - Ressourcerie Bébé & Enfant">
-        </a>
-        <nav class="main-nav" aria-label="Navigation principale">
-            <ul>
-                <li><a href="nous-trouver.html">Nous trouver</a></li>
-                <li><a href="contact.html" aria-current="page">Contact</a></li>
-                <li><a href="a-propos.html">À Propos</a></li>
-            </ul>
-        </nav>
+      <a href="../index.html" class="site-logo" aria-label="Page d'accueil de Recy'Kids">
+        <img src="../images/recykids-logo.webp" alt="Logo Recy'Kids - Ressourcerie Bébé & Enfant" width="100" height="100" />
+      </a>
+      <nav class="main-nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="nous-trouver.html">Nous trouver</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+          <li><a href="a-propos.html">À Propos</a></li>
+        </ul>
+      </nav>
     </div>
-</header>
-<main>
-    <h2>Contactez-nous</h2>
-    <p>Une question, une suggestion ? Écrivez-nous à <a href="mailto:recykids@email.fr">recykids@email.fr</a> ou utilisez le formulaire :</p>
-    <form class="contact-form" style="max-width:400px;margin:auto;">
-        <label for="nom">Nom :</label>
-        <input type="text" id="nom" name="nom" required>
-        <label for="email">Email :</label>
-        <input type="email" id="email" name="email" required>
-        <label for="message">Message :</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-        <button type="submit" disabled>Envoyer</button>
-        <p style="color:gray;font-size:smaller;">(Formulaire inactif — site statique.)</p>
-    </form>
-</main>
-<footer>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <h1>Contact</h1>
+    <p class="contact-intro">
+      Une question, un don à déposer, un article à proposer&nbsp;? Contactez-nous par email ou téléphone, ou passez directement à la boutique.
+    </p>
+
+    <!-- Cartes d'informations de contact -->
+    <section class="contact-cards" aria-label="Moyens de contact">
+      <article class="contact-card">
+        <img src="../images/icons/email.svg" alt="" width="56" height="56" aria-hidden="true" />
+        <h3>Nous écrire</h3>
+        <p>
+          Email&nbsp;: <a href="mailto:contact@recykids.fr">contact@recykids.fr</a><br />
+          Réponse sous 24–48h ouvrées.
+        </p>
+      </article>
+
+      <article class="contact-card">
+        <img src="../images/icons/phone.svg" alt="" width="56" height="56" aria-hidden="true" />
+        <h3>Nous appeler</h3>
+        <p>
+          Tél.&nbsp;: <a href="tel:+33400000000">+33&nbsp;4&nbsp;00&nbsp;00&nbsp;00&nbsp;00</a><br />
+          Lundi &rarr; Vendredi&nbsp;: 9h–17h.
+        </p>
+      </article>
+
+      <article class="contact-card">
+        <img src="../images/icons/map-pin.svg" alt="" width="56" height="56" aria-hidden="true" />
+        <h3>Passer en boutique</h3>
+        <p>
+          <a href="nous-trouver.html">À retirer en boutique — voir l’adresse</a><br />
+          Accès et plan détaillé sur la page “Nous trouver”.
+        </p>
+      </article>
+
+      <article class="contact-card">
+        <img src="../images/icons/clock.svg" alt="" width="56" height="56" aria-hidden="true" />
+        <h3>Horaires</h3>
+        <p>
+          Lundi &rarr; Vendredi&nbsp;: 9h–17h<br />
+          Fermé les week-ends et jours fériés.
+        </p>
+      </article>
+    </section>
+
+    <!-- Formulaire fonctionnel (Formspree) -->
+    <section class="contact-form" aria-labelledby="form-title">
+      <h3 id="form-title">Formulaire de contact</h3>
+
+      <!-- Remplace l'endpoint par le tien si besoin -->
+      <form action="https://formspree.io/f/xnngvwon" method="POST" autocomplete="on" novalidate>
+        <!-- Sujet du mail côté Formspree -->
+        <input type="hidden" name="_subject" value="Contact Recy'Kids">
+
+        <div class="form-row form-row--2">
+          <div>
+            <label for="nom">Nom</label>
+            <input id="nom" name="nom" type="text" placeholder="Votre nom" autocomplete="name" required>
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="vous@exemple.fr" autocomplete="email" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div>
+            <label for="objet">Objet</label>
+            <input id="objet" name="objet" type="text" placeholder="Sujet de votre message" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Votre message..." required></textarea>
+          </div>
+        </div>
+
+        <!-- Champ anti-spam (honeypot) -->
+        <input type="text" name="_gotcha" style="display:none">
+
+        <!-- Redirection après envoi (optionnel, de préférence URL absolue) -->
+        <!-- <input type="hidden" name="_next" value="https://ton-domaine/html/contact.html?sent=1"> -->
+
+        <div class="contact-actions">
+          <button class="btn" type="submit">Envoyer</button>
+
+          <!-- mailto (nécessite un client mail configuré) -->
+          <a class="btn btn-secondary"
+             href="mailto:contact@recykids.fr?subject=Contact%20Recy%27Kids&body=Bonjour%2C%0A%0A"
+             rel="noopener">
+            Écrire par email
+          </a>
+
+          <!-- Gmail (ouvre le composeur dans un nouvel onglet) -->
+          <a class="btn btn-secondary"
+             href="https://mail.google.com/mail/?view=cm&to=contact@recykids.fr&su=Contact%20Recy%27Kids"
+             target="_blank" rel="noopener">
+            Écrire via Gmail
+          </a>
+        </div>
+      </form>
+
+      <div class="contact-extra">
+        Astuce&nbsp;: pour un don d’objets volumineux, merci de préciser le type d’article, son état et des photos (JPG/PNG/WebP).
+      </div>
+    </section>
+  </main>
+
+  <footer>
     <p>&copy; 2025 Recy'Kids — Site statique sobre et éco-conçu</p>
-</footer>
+  </footer>
 </body>
 </html>
